@@ -1,6 +1,18 @@
 --for install redis
 docker run -d -p 6379:6379 -i -t redis:latest
 
+--inside container
+docker exec -it "name_container" sh
+
+--inside redis
+redis-cli
+
+--see keys
+KEYS *
+
+--see values
+HGETALL "key"
+HGETALL "UserEntity:1"
 
 POST
 curl -i -d '{"id":1, "name": "DAZO", "salary": 10.500}' \
